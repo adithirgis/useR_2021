@@ -15,4 +15,5 @@ R is a powerful tool in analysing air-quality data. With the ever-increasing glo
 Our second Shiny application- PolluCheck, and allows users to handle open-source air-quality datasets available from OpenAQ (https://openaq.org/#/countries/IN?_k=5ecycz), CPCB (https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing), and AirNow (https://www.airnow.gov/international/us-embassies-and-consulates/#India). Users can visualize data, perform basic statistical operations, and generate a variety of publication-ready plots. It also provides outlier detection and replacement of fill/negative values. We have also incorporated the popular openair package features in this application. 
 
  Word count = 228 (Max = 250)
+ Check this for images on MM - https://docs.google.com/presentation/d/1I6-wOWXvjsYMlUvXf9yIptFpgN8Jj59YDI7RjygbBx8/edit#slide=id.g918c71987a_0_8
 
