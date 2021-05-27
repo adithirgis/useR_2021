@@ -1,0 +1,51 @@
+---
+title: "R in the aiR!"
+subtitle: "useR! 2021"
+author: "Adithi R. Upadhya"
+institute: "ILK Labs"
+date: "2021/05/26 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: ["useR", "useR-fonts"]
+    self_contained: true
+    lib_dir: libs
+    nature:
+      includePresenterNotes: true
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+# Hello!
+
+My name is Adithi, and I am a Geospatial Data Analyst at ILK Labs in Bangalore, India. This is my first useR! I use R to analyse air quality data. Today, I will present about how I use R and shiny to build tools to provide workflow analyse air quality data.
+
+
+---
+`
+# R in air quality
+
+```{r, echo = TRUE, out.width = "10%", eval = TRUE}
+myimages<-list.files("WWW/", pattern = ".png", full.names = TRUE)
+knitr::include_graphics(myimages)
+
+```
+
+
+???
+
+R is a powerful tool in analysing air-quality data. With the ever-increasing global measurements of air pollutants (through stationary, mobile, low-cost, and satellite monitoring), the amount of data being collected is huge and necessitates the use of management platforms. In an effort to address this issue, I developed two Shiny applications to analyse and visualise air-quality data.
+
+---
+
+# Air Quality data
+
+- Mobile
+
+![MM_paper](WWW/MM.png)
+
+- Stationary 
+
+
+
