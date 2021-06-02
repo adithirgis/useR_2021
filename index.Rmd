@@ -45,6 +45,9 @@ class: center
 
 .center[Apte et. al(2017)]
 
+???
+
+The shiny app which we are presenting helps visualising air pollution data collected on a moving platform and helps in getting high resolution data. So we take sensors in a car, and do repeat measurements of each road in an area to generate stable high resolution air pollutant maps. When multiple rides are possible, there is superior performance in estimating long-term mean concentrations when multiple repeated drives are possible.
 
 ---
 class: center
@@ -70,8 +73,79 @@ knitr::include_graphics("WWW/PolluCheck.png")
 [AirNow](https://www.airnow.gov/international/us-embassies-and-consulates/#India).
 
 
+---
+
+# mmaqshiny
+```{r out.width = "100px", echo = FALSE}
+
+knitr::include_graphics("WWW/mmaqshiny.png")
+
+
+```
+
+- Handles high frequency data (1 Hz)
+
+- Pre-processes for various instrumental sensitivities
+
+- Joins output files from different instruments
+
+- Generates high resolution pollutant map
+
+- Reduces computational labour
 
 
 
+???
+
+This app can handle data of the order 18k every day from each of the instrument.
+The app reduces the time consumed for analysing each pollutant individually. 
+This application helps in visualising the data collected on field each day. 
+Each pollutant or sensor data requires some kind of preprocessing which depends on the principle on which it operates or its mechanical setup. 
+This really helps us in achieving one objective of our study. This app has reduced computational labour upto 3 times.
+
+
+---
+
+# Necessity is the mother of Invention 
+
+- App deployed
+
+- No programming knowledge required
+
+- One click to visualise all pollutants
+
+- Near real time quality check of the data
+
+- Visualise air pollution hot spots
+
+- Alarms user on instrumental errors
+
+???
+
+Before the app was developed each pollutant data collected from the app was put into the file locations and an automated process would join the files ie: GPS and PM2.5 and Black carbon to one single file. This process would require a huge amount of time because of an iterative process usually hours.
+This application builds the file for each day  in less than a minute, (instead of hours) along with it we can also save the plots for future use.
+The app allows team members to easily access data from the storage location and visualise the data in near-real time, without requiring knowledge in R. 
+It helps check the quality of the data at near real time and instantly visualise pollution hot spots.
+
+---
+
+# R packages 
+
+- Tidying the data: tidyverse
+
+- Manipulating timestamps: lubridate
+
+- GPS data mandatory but other files not necessary
+
+- Joining the file using mutating joins
+
+- Adding new instrument is smooth
+
+???
+Manipulating different timestamp formats has been the most challenging part and integrating a number of instruments has also been tough. 
+I would also like to mention here that we need GPS data mandatory rest all instruments data can or cannot be present. Mobile monitoring makes sense when there is a GPS angle to it.
+Joining all file together to make a single file also saves a lot of time for future analysis. The csv produced here is the primary product for further analysis. 
+Tidyverse, I guess is a must in all data analysis. 
+But I do have to make a point; adding any other new instrument is pretty smooth.
 
 

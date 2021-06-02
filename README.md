@@ -17,3 +17,6 @@ Our second Shiny application- PolluCheck, and allows users to handle open-source
  Word count = 228 (Max = 250)
  Check this for images on MM - https://docs.google.com/presentation/d/1I6-wOWXvjsYMlUvXf9yIptFpgN8Jj59YDI7RjygbBx8/edit#slide=id.g918c71987a_0_8
 
+Check this - https://docs.google.com/presentation/d/1wMnyLM53i5HcZrgkcoy2IvrCfeupji9iVjCGZjI_-Kw/edit#slide=id.g7bb9074514_0_509
+
+Check this - https://docs.google.com/document/d/1xXSEIyp3F0G94hTJQQFTm-d7S0n06276Iii_59tiVfU/edit#heading=h.7rkjbc6g4fz2
