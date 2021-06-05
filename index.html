@@ -4,6 +4,7 @@
     <title>R in the aiR!</title>
     <meta charset="utf-8" />
     <meta name="author" content="Adithi R. Upadhya" />
+    <meta name="date" content="2021-06-06" />
     <script src="libs/header-attrs-2.7/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/useR.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/useR-fonts.css" rel="stylesheet" />
@@ -16,7 +17,7 @@ class: center, middle, inverse, title-slide
 ## useR! 2021
 ### Adithi R. Upadhya
 ### ILK Labs
-### 2021/05/26 (updated: 2021-06-02)
+### 2021-06-06
 
 ---
 
@@ -49,24 +50,6 @@ class: center
 ???
 
 The shiny app which we are presenting helps visualising air pollution data collected on a moving platform and helps in getting high resolution data. So we take sensors in a car, and do repeat measurements of each road in an area to generate stable high resolution air pollutant maps. When multiple rides are possible, there is superior performance in estimating long-term mean concentrations when multiple repeated drives are possible.
-
----
-class: center
-
-# Stationary Monitoring 
-
-![Stationary](WWW/MM.png)
-
-
-
----
-
-# pollucheck
-&lt;img src="WWW/PolluCheck.png" width="100px" /&gt;
-
-- It is a simple application / package built using shiny to analyse open-source air quality data.
-- The sources from where data can be downloaded and analysed are - [CPCB (specific to India)](https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing), [OpenAQ](https://openaq.org/#/countries/IN?_k=5ecycz), and
-[AirNow](https://www.airnow.gov/international/us-embassies-and-consulates/#India).
 
 
 ---
@@ -111,6 +94,8 @@ This really helps us in achieving one objective of our study. This app has reduc
 
 - Alarms user on instrumental errors
 
+- Adding new instrument is smooth
+
 ???
 
 Before the app was developed each pollutant data collected from the app was put into the file locations and an automated process would join the files ie: GPS and PM2.5 and Black carbon to one single file. This process would require a huge amount of time because of an iterative process usually hours.
@@ -130,7 +115,6 @@ It helps check the quality of the data at near real time and instantly visualise
 
 - Joining the file using mutating joins
 
-- Adding new instrument is smooth
 
 ???
 Manipulating different timestamp formats has been the most challenging part and integrating a number of instruments has also been tough. 
@@ -138,6 +122,50 @@ I would also like to mention here that we need GPS data mandatory rest all instr
 Joining all file together to make a single file also saves a lot of time for future analysis. The csv produced here is the primary product for further analysis. 
 Tidyverse, I guess is a must in all data analysis. 
 But I do have to make a point; adding any other new instrument is pretty smooth.
+
+---
+class: center
+
+# Stationary Monitoring 
+
+![Stationary](WWW/MM.png)
+
+
+---
+
+# pollucheck
+&lt;img src="WWW/PolluCheck.png" width="100px" /&gt;
+
+- Package built using shiny to analyse open-source air quality data.
+
+- The sources compatible with the package are - [CPCB (specific to India)](https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing), [OpenAQ](https://openaq.org/#/countries/IN?_k=5ecycz), and
+[AirNow](https://www.airnow.gov/international/us-embassies-and-consulates/#India).
+
+- Displays summary statistics, summary plots for all parameters and an option of daily and monthly summary statistics is also available.
+
+- Checks for normality, generates density, Q-Q plot along with checks for trends in the time series for the selected parameter.
+
+- Implements linear or multilinear regression using the selected parameters.
+
+- Allows users to upload another set of data to compare selected parameters and generate plots.
+
+- Pre-loaded dataset available to work around the app without any dataset. 
+
+---
+
+## Thank you and to know more
+
+Email me at - [adithi@ilklabs.com](adithi@ilklabs.com)
+
+Find me on github - [@adithirgis](https://github.com/adithirgis)
+
+Follow me on twitter - [@AdithiUpadhya](https://twitter.com/AdithiUpadhya)
+
+
+
+
+
+
 
 
     </textarea>
