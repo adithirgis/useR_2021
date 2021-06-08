@@ -1,6 +1,5 @@
 ---
-title: "R in the aiR!"
-subtitle: "useR! 2021"
+title: "R in the aiR! at useR! 2021"
 author: "Adithi R. Upadhya"
 institute: "ILK Labs"
 date: "`r Sys.Date()`"
@@ -23,7 +22,7 @@ My name is Adithi, and I am a Geospatial Data Analyst at ILK Labs in Bangalore, 
 
 ---
 
-# R in air quality
+# R in the aiR!
 
 ```{r out.width = "100px", echo = FALSE}
 
@@ -57,7 +56,6 @@ The shiny app which we are presenting helps visualising air pollution data colle
 
 knitr::include_graphics("WWW/mmaqshiny.png")
 
-
 ```
 
 - Handles high frequency data (1 Hz)
@@ -73,12 +71,7 @@ knitr::include_graphics("WWW/mmaqshiny.png")
 
 
 ???
-
-This app can handle data of the order 18k every day from each of the instrument.
-The app reduces the time consumed for analysing each pollutant individually. 
-This application helps in visualising the data collected on field each day. 
-Each pollutant or sensor data requires some kind of preprocessing which depends on the principle on which it operates or its mechanical setup. 
-This really helps us in achieving one objective of our study. This app has reduced computational labour upto 3 times.
+The first package is mmaqshiyny. This app can handle data of the order 18k every day from each of the instrument. The app reduces the time consumed for analysing each pollutant individually. This application helps in visualising the data collected on field each day. Each pollutant or sensor data requires some kind of preprocessing which depends on the principle on which it operates or its mechanical setup. This really helps us in achieving one objective of our study. This app has reduced computational labour upto 3 times. GPS data mandatory but other files not necessary.
 
 
 ---
@@ -101,38 +94,23 @@ This really helps us in achieving one objective of our study. This app has reduc
 
 ???
 
-Before the app was developed each pollutant data collected from the app was put into the file locations and an automated process would join the files ie: GPS and PM2.5 and Black carbon to one single file. This process would require a huge amount of time because of an iterative process usually hours.
+Before the app was developed each pollutant data collected from the app was put into the file locations and an automated process would join the files that is - GPS and PM2.5 and Black carbon to one single file. This process would require a huge amount of time because of an iterative process usually hours.
 This application builds the file for each day  in less than a minute, (instead of hours) along with it we can also save the plots for future use.
 The app allows team members to easily access data from the storage location and visualise the data in near-real time, without requiring knowledge in R. 
 It helps check the quality of the data at near real time and instantly visualise pollution hot spots.
-
----
-
-# R packages 
-
-- Tidying the data: tidyverse
-
-- Manipulating timestamps: lubridate
-
-- GPS data mandatory but other files not necessary
-
-- Joining the file using mutating joins
-
-
-???
-Manipulating different timestamp formats has been the most challenging part and integrating a number of instruments has also been tough. 
-I would also like to mention here that we need GPS data mandatory rest all instruments data can or cannot be present. Mobile monitoring makes sense when there is a GPS angle to it.
-Joining all file together to make a single file also saves a lot of time for future analysis. The csv produced here is the primary product for further analysis. 
-Tidyverse, I guess is a must in all data analysis. 
-But I do have to make a point; adding any other new instrument is pretty smooth.
 
 ---
 class: center
 
 # Stationary Monitoring 
 
-![Stationary](WWW/MM.png)
+```{r out.width = "200px", echo = FALSE}
 
+knitr::include_graphics("WWW/SM.png")
+
+```
+
+.center[CSTEP, Bangalore, India]
 
 ---
 
@@ -144,12 +122,10 @@ knitr::include_graphics("WWW/PolluCheck.png")
 
 ```
 
-- Package built using shiny to analyse open-source air quality data.
-
 - The sources compatible with the package are - [CPCB (specific to India)](https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing), [OpenAQ](https://openaq.org/#/countries/IN?_k=5ecycz), and
 [AirNow](https://www.airnow.gov/international/us-embassies-and-consulates/#India).
 
-- Displays summary statistics, summary plots for all parameters and an option of daily and monthly summary statistics is also available.
+- Aims at generating a suite of statistical plots and summary statistics with several data cleaning options.
 
 - Checks for normality, generates density, Q-Q plot along with checks for trends in the time series for the selected parameter.
 
@@ -172,6 +148,24 @@ Follow me on twitter - [@AdithiUpadhya](https://twitter.com/AdithiUpadhya)
 
 
 
+---
+
+# R packages 
+
+- Shiny!! 
+
+- Tidying the data: tidyverse
+
+- Manipulating timestamps: lubridate
+
+- Joining the file using mutating joins
+
+
+???
+Manipulating different timestamp formats has been the most challenging part and integrating a number of instruments has also been tough. 
+Joining all file together to make a single file also saves a lot of time for future analysis. The csv produced here is the primary product for further analysis. 
+Tidyverse, I guess is a must in all data analysis. 
+But I do have to make a point; adding any other new instrument is pretty smooth.
 
 
 
