@@ -1,6 +1,6 @@
 ---
 title: "R in the aiR! at useR! 2021"
-author: "Adithi R. Upadhya"
+author: "Adithi R. Upadhya, Geospatial Data Analyst"
 institute: "ILK Labs"
 date: "`r Sys.Date()`"
 output:
