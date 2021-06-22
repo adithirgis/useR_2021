@@ -4,7 +4,7 @@
     <title>R in the aiR! at useR! 2021</title>
     <meta charset="utf-8" />
     <meta name="author" content="Adithi R. Upadhya, Geospatial Data Analyst" />
-    <meta name="date" content="2021-06-08" />
+    <meta name="date" content="2021-06-22" />
     <script src="libs/header-attrs-2.7/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/useR.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/useR-fonts.css" rel="stylesheet" />
@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 # R in the aiR! at useR! 2021
 ### Adithi R. Upadhya, Geospatial Data Analyst
 ### ILK Labs
-### 2021-06-08
+### 2021-06-22
 
 ---
 
@@ -24,7 +24,7 @@ class: center, middle, inverse, title-slide
 
 # Hello!
 
-My name is Adithi, and I am a Geospatial Data Analyst at ILK Labs in Bangalore, India. This is my first useR! I use R to analyse air quality data. Today, I will present about how I use R and shiny to build tools to provide a workflow to analyse air quality data.
+My name is Adithi, and I am a Geospatial Data Analyst at ILK Labs in Bangalore, India. This is my first useR! I use R to work with air quality data. I will present about how I use shiny to build tools to provide a workflow to analyse air quality data.
 
 
 ---
@@ -33,9 +33,35 @@ My name is Adithi, and I am a Geospatial Data Analyst at ILK Labs in Bangalore, 
 
 &lt;img src="WWW/R.png" width="100px" /&gt;
 
-- R is a powerful tool in analysing air-quality data. 
-- With the ever-increasing global measurements of air pollutants (through stationary, mobile, low-cost, and satellite monitoring), the amount of data being collected is huge and necessitates the use of management platforms. 
-- In an effort to address this issue, I developed two Shiny applications to analyse and visualise air-quality data.
+- R and shiny are a powerful combination to work hands-on air-quality data. 
+
+- The amount of data being collected is huge and necessitates the use of management platforms. 
+
+
+???
+
+R and shiny are the powerful couple which can be used to build interactive platform to manage and work with data collected.
+
+With the ever-increasing global measurements of air pollutants (through stationary, mobile, low-cost, and satellite monitoring), the amount of data being collected is huge and necessitates the use of management platforms.
+
+In an effort to address this issue, I developed two Shiny applications to analyse and visualise air-quality data.
+
+
+---
+
+# Necessity is the mother of Invention 
+
+- Apps can be deployed
+
+- No programming knowledge required
+
+- Help is always around
+
+???
+
+Necessity is the mother of invention. Shiny apps are very accessible and user friendly, so team members across continents can use these without any prior knowledge of programming. Another added benefit is having a vibrant and supportive community using R. We, at ILK Labs always wanted to work with high dimensional data and talk air quality, to make it possible we designed and developed these applications. Both the applications have preloaded dataset to work around. 
+
+
 
 ---
 class: center
@@ -48,7 +74,7 @@ class: center
 
 ???
 
-The shiny app which we are presenting helps visualising air pollution data collected on a moving platform and helps in getting high resolution data. So we take sensors in a car, and do repeat measurements of each road in an area to generate stable high resolution air pollutant maps. When multiple rides are possible, there is superior performance in estimating long-term mean concentrations when multiple repeated drives are possible.
+The first shiny app "mmapshiny" helps processing high resolution air pollution data collected on a moving platform usually called mobile monitoring. So we take multiple sensors in a car, and take repeated measurements of each road in an area to generate stable high resolution air pollutant maps (usually daily). There is superior performance in estimating long-term mean concentrations when multiple repeated drives are possible.
 
 
 ---
@@ -56,46 +82,27 @@ The shiny app which we are presenting helps visualising air pollution data colle
 # mmaqshiny
 &lt;img src="WWW/mmaqshiny.png" width="100px" /&gt;
 
-- Handles high frequency data (1 Hz)
+- Handles high frequency data (~ 1 Hz)
+
+- Visualise air pollution hot spots
 
 - Pre-processes for various instrumental sensitivities
 
 - Joins output files from different instruments
 
-- Generates high resolution pollutant map
-
 - Reduces computational labour
-
-
-
-???
-The first package is mmaqshiyny. This app can handle data of the order 18k every day from each of the instrument. The app reduces the time consumed for analysing each pollutant individually. This application helps in visualising the data collected on field each day. Each pollutant or sensor data requires some kind of preprocessing which depends on the principle on which it operates or its mechanical setup. This really helps us in achieving one objective of our study. This app has reduced computational labour upto 3 times. GPS data mandatory but other files not necessary.
-
-
----
-
-# Necessity is the mother of Invention 
-
-- App deployed
-
-- No programming knowledge required
-
-- One click to visualise all pollutants
-
-- Near real time quality check of the data
-
-- Visualise air pollution hot spots
 
 - Alarms user on instrumental errors
 
-- Adding new instrument is smooth
+- Near real time quality check of the data
+
+
 
 ???
 
-Before the app was developed each pollutant data collected from the app was put into the file locations and an automated process would join the files that is - GPS and PM2.5 and Black carbon to one single file. This process would require a huge amount of time because of an iterative process usually hours.
-This application builds the file for each day  in less than a minute, (instead of hours) along with it we can also save the plots for future use.
-The app allows team members to easily access data from the storage location and visualise the data in near-real time, without requiring knowledge in R. 
-It helps check the quality of the data at near real time and instantly visualise pollution hot spots.
+mmaqshiny can handle data of the order 10,000 every day from each of the instrument, we had nearly 5. It reduces the time consumed for analysing each pollutant individually, helps in visualising the data collected on field each day, can also be used to look for pollution hotspots. Each pollutant or sensor data requires some kind of preprocessing which depends on the principle on which it operates or its mechanical setup. Eventually joins different instrument data into one single corrected file.
+This really helps us in achieving the unit of analysis for the rest of the study. This app has reduced computational labour upto 3 times. Since mobile data contains a lot of spatial data, GPS data is mandatory but other files not necessary. Since the Alarm tab is also present in the app, which helps the user to give a near real time check usually after the ride, on the health of all the instruments used. This application is available as a package on CRAN.  
+
 
 ---
 class: center
@@ -106,58 +113,71 @@ class: center
 
 .center[CSTEP, Bangalore, India]
 
+???
+
+The second shiny app "pollucheck" helps processing open source air pollution data usually called stationary monitoring. There are several platforms which provide open source air quality data. We built this application for users of these platforms who can have quick analysis and basic plots of air quality done and think about science. 
+
 ---
 
 # pollucheck
 &lt;img src="WWW/PolluCheck.png" width="100px" /&gt;
 
-- The sources compatible with the package are - [CPCB (specific to India)](https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing), [OpenAQ](https://openaq.org/#/countries/IN?_k=5ecycz), and
-[AirNow](https://www.airnow.gov/international/us-embassies-and-consulates/#India).
+- sources compatible - [CPCB (specific to India)](https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing), [OpenAQ](https://openaq.org/#/countries/IN?_k=5ecycz), and
+[AirNow](https://www.airnow.gov/international/us-embassies-and-consulates/#India)
 
-- Aims at generating a suite of statistical plots and summary statistics with several data cleaning options.
+- Data processing options available along with different summary statistics
 
-- Checks for normality, generates density, Q-Q plot along with checks for trends in the time series for the selected parameter.
+- Generates statistical and summary plots
 
-- Implements linear or multilinear regression using the selected parameters.
+- Implements linear or multilinear regression 
 
-- Allows users to upload another set of data to compare selected parameters and generate plots.
+- Allows users to compare from two sites
 
-- Pre-loaded dataset available to work around the app without any dataset. 
+???
 
----
-
-## Thank you and to know more
-
-Email me at - [adithi@ilklabs.com](adithi@ilklabs.com)
-
-Find me on github - [@adithirgis](https://github.com/adithirgis)
-
-Follow me on twitter - [@AdithiUpadhya](https://twitter.com/AdithiUpadhya)
-
-
-
+"pollucheck" can be used for data downloaded from CPCB (only for India), OpenAQ and AirNow, it aims at generating a range of statistical plots and summary statistics with several data processing options. There are options for different averaging periods as well. It also checks for normality, generates density, Q-Q plot along with checks for trends in the time series for the selected parameter. It can implement linear or multilinear regression using the selected parameters. pollucheck allows users to upload another set of data to compare selected parameters and generate plots. It also implements two plots from the openair package. This is also made into a package and will be on its way to CRAN soon. Don't forget to check out air quality of your city using our app! 
 
 ---
 
-# R packages 
+# R packages shoutouts!
 
-- Shiny!! 
+- `shiny`!! 
 
-- Tidying the data: tidyverse
+- Tidying the data: `tidyverse`
 
-- Manipulating timestamps: lubridate
+- Manipulating timestamps: `lubridate`
 
 - Joining the file using mutating joins
 
+- `openair`
+
+- and many more.....
+
 
 ???
-Manipulating different timestamp formats has been the most challenging part and integrating a number of instruments has also been tough. 
-Joining all file together to make a single file also saves a lot of time for future analysis. The csv produced here is the primary product for further analysis. 
-Tidyverse, I guess is a must in all data analysis. 
-But I do have to make a point; adding any other new instrument is pretty smooth.
+
+A huge shoutout to all the packages which made mmaqshiny and pollucheck possible. 
+Manipulating different timestamp formats has been the most challenging part since there are differnt time stamp format and the tiring timezones. Integrating a number of instruments has also been a task, joining all file together to make a single file also saves a lot of time for future analysis. Tidyverse, I guess is a must in all data analysis. 
 
 
+---
+class: center
 
+# Questions?
+
+???
+
+Please let me know if you all have any further questions? I am also available on the Lounge if you want to discuss. Have a great day ahead!
+
+---
+
+## Thank you and to know more or to provide feedback find me - 
+
+Email - [adithi@ilklabs.com](adithi@ilklabs.com)
+
+GitHub - [@adithirgis](https://github.com/adithirgis)
+
+Twitter - [@AdithiUpadhya](https://twitter.com/AdithiUpadhya)
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
