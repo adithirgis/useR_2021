@@ -24,7 +24,7 @@ class: center, middle, inverse, title-slide
 
 # Hello!
 
-My name is Adithi, and I am a Geospatial Data Analyst at ILK Labs in Bangalore, India. This is my first useR! I use R to work with air quality data. I will present about how I use shiny to build tools to provide a workflow to analyse air quality data.
+My name is Adithi, and I am a Geospatial Data Analyst at ILK Labs in Bangalore and this is my first useR! I use R to work with air quality data. Today, I will present about how I used shiny to build tools to provide a workflow to analyse air quality data.
 
 
 ---
@@ -40,11 +40,13 @@ My name is Adithi, and I am a Geospatial Data Analyst at ILK Labs in Bangalore, 
 
 ???
 
-R and shiny are the powerful couple which can be used to build interactive platform to manage and work with data collected.
+R in the air! 
 
-With the ever-increasing global measurements of air pollutants (through stationary, mobile, low-cost, and satellite monitoring), the amount of data being collected is huge and necessitates the use of management platforms.
+R and shiny are a powerful couple which can be used to build interactive platforms to manage and work with the data collected.
 
-In an effort to address this issue, I developed two Shiny applications to analyse and visualise air-quality data.
+With the ever increasing global measurements of air pollutants (through stationary, mobile, low-cost, and satellite monitoring), the amount of data being collected is huge and it necessitates the use of management platforms.
+
+In an effort to address this issue, we developed two Shiny applications to analyse and visualise air quality data.
 
 
 ---
@@ -59,7 +61,11 @@ In an effort to address this issue, I developed two Shiny applications to analys
 
 ???
 
-Necessity is the mother of invention. Shiny apps are very accessible and user friendly, so team members across continents can use these without any prior knowledge of programming. Another added benefit is having a vibrant and supportive community using R. We, at ILK Labs always wanted to work with high dimensional data and talk air quality, to make it possible we designed and developed these applications. Both the applications have preloaded dataset to work around. 
+As they say - necessity is the mother of invention. We, at ILK Labs always wanted to work with high dimensional data and talk air quality, to make it possible we designed and developed two applications.
+
+Shiny apps are user friendly, so team members across continents can use the applications without any prior knowledge of programming. 
+
+Another added benefit is having a vibrant and supportive community using R. Both these applications have pre-loaded datasets to work around. 
 
 
 
@@ -74,7 +80,11 @@ class: center
 
 ???
 
-The first shiny app "mmapshiny" helps processing high resolution air pollution data collected on a moving platform usually called mobile monitoring. So we take multiple sensors in a car, and take repeated measurements of each road in an area to generate stable high resolution air pollutant maps (usually daily). There is superior performance in estimating long-term mean concentrations when multiple repeated drives are possible.
+The first shiny application is called "mmapshiny" which helps in processing high resolution air quality data collected on a moving platform usually called mobile monitoring. 
+
+So we take multiple sensors in a car, and take repeated measurements of each road in an area to generate stable high resolution air pollutant maps (usually daily maps are generated). 
+
+There is superior performance in estimating long-term mean concentrations when multiple repeated drives are possible.
 
 ---
 
@@ -87,7 +97,7 @@ class: center
 
 ???
 
-Have a glimpse of [mmaqshiny](https://aruapps.shinyapps.io/mmaqshiny/).
+This is how mmaqshiny looks like. 
 
 ---
 
@@ -106,14 +116,24 @@ Have a glimpse of [mmaqshiny](https://aruapps.shinyapps.io/mmaqshiny/).
 
 - Alarms user on instrumental errors
 
-- Near real time quality check of the data
+- Near real time quality check of the data (usually after the ride)
 
 
 
 ???
 
-mmaqshiny can handle data of the order 10,000 every day from each of the instrument, we had nearly 5. It reduces the time consumed for analysing each pollutant individually, helps in visualising the data collected on field each day, can also be used to look for pollution hotspots, locations that are relatively more polluted than neighboring areas. Each pollutant or sensor data requires some kind of preprocessing which depends on the principle on which it operates or its mechanical setup. Eventually joins different instrument data into one single corrected file.
-This really helps us in achieving the unit of analysis for the rest of the study. This app has reduced computational labour up to 3 times. Since mobile data contains a lot of spatial data, GPS data is mandatory but other files not necessary. Since the Alarm tab is also present in the app, which helps the user to give a near real time check usually after the ride, on the health of all the instruments used. This application is available as a package on CRAN.  
+mmaqshiny can handle data of the order 1000's every day from each of the instrument, we had nearly 5 instruments for this study. 
+
+It reduces the time consumed for analysing each pollutant individually, helps in visualising the data collected on field each day, it can also be used to look for pollution hotspots, locations that are relatively more polluted than neighboring areas. 
+
+Each pollutant or sensor data requires specific kind of pre-processing which depends on the principle on which it operates or its mechanical setup. Eventually, it joins different instrument data into one single corrected file.
+
+
+This really helps us in achieving the unit of analysis for the rest of the study. 
+
+This application has reduced computational labour. Since mobile data contains a huge amount of spatial data, GPS data file is mandatory but other files from different instruments are not necessary. 
+
+Since Alarm tab is also present in the application, it helps the user to give a near real-time check on the health of all the instruments used. This application is available as a package on CRAN.  
 
 
 ---
@@ -127,7 +147,9 @@ class: center
 
 ???
 
-The second shiny app "pollucheck" helps processing open source air pollution data usually called stationary monitoring. There are several platforms which provide open source air quality data. We built this application for users of these platforms who can have quick analysis and basic plots of air quality done and think about science. 
+The second shiny application "pollucheck" helps processing open source air quality data usually called stationary monitoring. 
+
+There are several platforms which provide open source air quality data. We built this application for users of these platforms who can have quick analysis and basic plots of air quality easily generated and think about science. 
 
 ---
 
@@ -140,7 +162,7 @@ class: center
 
 ???
 
-Have a peek at [pollucheck](https://aruapps.shinyapps.io/OpenSourceAirQualityApp).
+This is how pollucheck looks like. 
 
 ---
 
@@ -160,11 +182,19 @@ Have a peek at [pollucheck](https://aruapps.shinyapps.io/OpenSourceAirQualityApp
 
 ???
 
-"pollucheck" can be used for data downloaded from CPCB (only for India), OpenAQ and AirNow, it aims at generating a range of statistical plots and summary statistics with several data processing options. There are options for different averaging periods as well. It also checks for normality, generates density, Q-Q plot along with checks for trends in the time series for the selected parameter. It can implement linear or multilinear regression using the selected parameters. pollucheck allows users to upload another set of data to compare selected parameters and generate plots. It also implements two plots from the openair package. This is also made into a package and will be on its way to CRAN soon. Don't forget to check out air quality of your city using our app! 
+"pollucheck" can be used for data downloaded from CPCB (specific to India), OpenAQ and AirNow, it aims at generating a range of statistical plots and summary statistics with several data processing options. 
+
+There are options for different averaging periods as well. It also checks for normality, generates density, Q-Q plots along with all these checks for trends in the time series for the selected parameter. 
+
+It can implement linear or multilinear regression. pollucheck allows users to upload another set of data to compare selected parameters and generate plots. 
+
+It also implements two plots from the openair package. 
+
+This is made into a package and will be on its way to CRAN soon. Don't forget to check out air quality of your city using our application! 
 
 ---
 
-# R packages shoutouts!
+# R packages!
 
 - `shiny`!! 
 
@@ -181,10 +211,12 @@ Have a peek at [pollucheck](https://aruapps.shinyapps.io/OpenSourceAirQualityApp
 
 ???
 
-A huge shoutout to all the packages which made mmaqshiny and pollucheck possible. 
-Manipulating different timestamp formats has been the most challenging part since there are differnt time stamp format and the tiring timezones. Integrating a number of instruments has also been a task, joining all file together to make a single file also saves a lot of time for future analysis. Tidyverse, I guess is a must in all data analysis. 
+A huge shout out to all the packages which made these applications possible. 
+Manipulating different timestamp has been the most challenging part since there are different time stamp format and the multiple timezones. 
 
+Integrating a number of instruments has also been a task, joining all files together to make a single file saves a lot of time for further analysis. 
 
+Tidyverse, I guess is a must in all data analysis. 
 
 ---
 
@@ -198,7 +230,7 @@ Twitter - [@AdithiUpadhya](https://twitter.com/AdithiUpadhya)
 
 ???
 
-Please let me know if you all have any further questions? I am also available on the Lounge if you want to discuss. Have a great day ahead!
+Please let me know if you all have any further questions. I am also available in the Lounge if you want to discuss. Have a great day ahead! Enjoy useR!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
