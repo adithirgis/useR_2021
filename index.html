@@ -4,7 +4,7 @@
     <title>R in the aiR! at useR! 2021</title>
     <meta charset="utf-8" />
     <meta name="author" content="Adithi R. Upadhya, Geospatial Data Analyst" />
-    <meta name="date" content="2021-06-22" />
+    <meta name="date" content="2021-06-23" />
     <script src="libs/header-attrs-2.7/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/useR.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/useR-fonts.css" rel="stylesheet" />
@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 # R in the aiR! at useR! 2021
 ### Adithi R. Upadhya, Geospatial Data Analyst
 ### ILK Labs
-### 2021-06-22
+### 2021-06-23
 
 ---
 
@@ -112,8 +112,8 @@ Have a glimpse of [mmaqshiny](https://aruapps.shinyapps.io/mmaqshiny/).
 
 ???
 
-mmaqshiny can handle data of the order 10,000 every day from each of the instrument, we had nearly 5. It reduces the time consumed for analysing each pollutant individually, helps in visualising the data collected on field each day, can also be used to look for pollution hotspots. Each pollutant or sensor data requires some kind of preprocessing which depends on the principle on which it operates or its mechanical setup. Eventually joins different instrument data into one single corrected file.
-This really helps us in achieving the unit of analysis for the rest of the study. This app has reduced computational labour upto 3 times. Since mobile data contains a lot of spatial data, GPS data is mandatory but other files not necessary. Since the Alarm tab is also present in the app, which helps the user to give a near real time check usually after the ride, on the health of all the instruments used. This application is available as a package on CRAN.  
+mmaqshiny can handle data of the order 10,000 every day from each of the instrument, we had nearly 5. It reduces the time consumed for analysing each pollutant individually, helps in visualising the data collected on field each day, can also be used to look for pollution hotspots, locations that are relatively more polluted than neighboring areas. Each pollutant or sensor data requires some kind of preprocessing which depends on the principle on which it operates or its mechanical setup. Eventually joins different instrument data into one single corrected file.
+This really helps us in achieving the unit of analysis for the rest of the study. This app has reduced computational labour up to 3 times. Since mobile data contains a lot of spatial data, GPS data is mandatory but other files not necessary. Since the Alarm tab is also present in the app, which helps the user to give a near real time check usually after the ride, on the health of all the instruments used. This application is available as a package on CRAN.  
 
 
 ---
@@ -185,14 +185,6 @@ A huge shoutout to all the packages which made mmaqshiny and pollucheck possible
 Manipulating different timestamp formats has been the most challenging part since there are differnt time stamp format and the tiring timezones. Integrating a number of instruments has also been a task, joining all file together to make a single file also saves a lot of time for future analysis. Tidyverse, I guess is a must in all data analysis. 
 
 
----
-class: center
-
-# Questions?
-
-???
-
-Please let me know if you all have any further questions? I am also available on the Lounge if you want to discuss. Have a great day ahead!
 
 ---
 
@@ -204,6 +196,9 @@ GitHub - [@adithirgis](https://github.com/adithirgis)
 
 Twitter - [@AdithiUpadhya](https://twitter.com/AdithiUpadhya)
 
+???
+
+Please let me know if you all have any further questions? I am also available on the Lounge if you want to discuss. Have a great day ahead!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
